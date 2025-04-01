@@ -1,0 +1,57 @@
+
+
+<% layout('/layouts/boilerplate') -%>   
+    <h1>crete new list</h1>
+
+    <form action="/listing" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="col-8 offset-2">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" placeholder="enter tiltle" required  class="form-control">
+            <div class="invalid-feedback">please enter title</div>
+            
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" name="listing[description]" placeholder="enter description" required class="form-control"></textarea>
+            <div class="ininvalid-feedback">please fill description </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" name="listing[image]"  class="form-control">
+            required
+            
+        </div>
+       <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            
+            <input type="Number" name="listing[price]" placeholder="1200" required class="form-control">
+            <div class="invalid-feedback">please enter price</div>
+            
+        </div>
+        <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Country</label>
+            <input type="text" name="listing[country]" placeholder="india"  required class="form-control">
+            <div class="invalid-feedback">please enter country</div>
+            
+        </div>
+       </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" placeholder="Dariyabad, barabanki" class="form-control" required class="form-control">
+            <div class="invalid-feedback">please enter location</div>
+            
+        </div>
+        
+        
+        <br>
+        
+        <br>
+        <button class="btn btn-dark add-btn">add</button>
+
+        </div>
+    </form>
+    <!-- <%-include("../includes/footer.ejs") %> -->
+    
