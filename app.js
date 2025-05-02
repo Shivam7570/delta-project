@@ -35,26 +35,16 @@ mongoose.set('debug', true);
 
 const dburl =process.env.ATLASDB_URL
 
+const dbUrl = process.env.ATLASDB_URL;
 
-  async function main() {
-    try {
-      await mongoose.connect(dburl, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        connectTimeoutMS: 30000,  // 30 seconds for the connection to be established
-        socketTimeoutMS: 45000,   // 45 seconds for socket timeout
-        retryWrites: true,
-      });
-      console.log("Connected to DB successfully");
-    } catch (err) {
-      console.error("Error connecting to DB:", err.message);
-    }
-  }
-
-
+main().then(() => {
+    console.log("connected to DB");
+}).catch((err) => {
+    console.log(err);
+});
 
 async function main() {
-  await mongoose.connect(dburl);
+    await mongoose.connect(dbUrl);
 }
 
 
