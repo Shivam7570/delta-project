@@ -33,7 +33,6 @@ const { connect } = require('http2');
 
 mongoose.set('debug', true);
 
-const dburl =process.env.ATLASDB_URL
 
 const dbUrl = process.env.ATLASDB_URL;
 
