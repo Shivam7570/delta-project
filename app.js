@@ -99,9 +99,7 @@ const sessionOptions = {
 
 console.log("Cloud Name:", process.env.CLOUD_NAME);
 
-app.get("/", (req, res) => {
-    res.send("hello");
-});
+
 app.use(session(sessionOptions));
 app.use(flash());
 app.use(passport.initialize());
@@ -118,6 +116,11 @@ app.use((req,res, next)=>{
     next();
 })
 
+app.get('/', async(req, res)=>{
+     const allListing = await Listing.find({});
+res.render("listing/index.ejs", { allListing })
+    
+})
 
 app.use("/listing", listingRouter);
  app.use("/listings/:id/reviews", reviewRouter) 
