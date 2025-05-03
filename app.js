@@ -34,7 +34,7 @@ const { connect } = require('http2');
 mongoose.set('debug', true);
 
 
-const dbUrl = process.env.ATLASDB_URL;
+const dburl = process.env.ATLASDB_URL;
 
 main().then(() => {
     console.log("connected to DB");
@@ -43,7 +43,7 @@ main().then(() => {
 });
 
 async function main() {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(dburl);
 }
 
 
